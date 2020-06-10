@@ -24,8 +24,8 @@ RUN tar -zxf /tmp/dist/linux-amd64_deb.tgz -C /tmp/dist/
 
 # Установка КриптоПро CSP 5
 RUN /tmp/dist/linux-amd64_deb/install.sh
-RUN dpkg -i /tmp/dist/linux-amd64_deb/lsb-cprocsp-pkcs11-64_5.0.11732-6_amd64.deb
-RUN dpkg -i /tmp/dist/linux-amd64_deb/cprocsp-rdr-gui-gtk-64_5.0.11732-6_amd64.deb
+RUN dpkg -i /tmp/dist/linux-amd64_deb/lsb-cprocsp-pkcs11-64_*
+RUN dpkg -i /tmp/dist/linux-amd64_deb/cprocsp-rdr-gui-gtk-64_*
 
 # Ввод лицензионного ключа если передан параметр CSP_LICENSE_KEY
 RUN if [ "$CSP_LICENSE_KEY" = "false" ] ; then echo 'No CSP_LICENSE_KEY'; else  /opt/cprocsp/sbin/amd64/cpconfig -license -set $CSP_LICENSE_KEY; fi

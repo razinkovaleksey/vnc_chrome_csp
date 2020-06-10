@@ -55,3 +55,7 @@ Standalone:
 см также https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/275
 
 см также https://forum.ubuntu.ru/index.php?topic=300549.0
+
+КриптоПро csp dist https://www.cryptopro.ru/products/csp/downloads
+
+IFCPlugin dist https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
