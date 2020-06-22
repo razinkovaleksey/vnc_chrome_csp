@@ -77,3 +77,11 @@ Standalone:
 КриптоПро csp dist https://www.cryptopro.ru/products/csp/downloads
 
 IFCPlugin dist https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
+
+см также https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/275
+
+см также https://forum.ubuntu.ru/index.php?topic=300549.0
+
+см также http://crxextractor.com/
+
+см также https://chrome.google.com/webstore/detail/ifcplugin-extension/pbefkdcndngodfeigfdgiodgnmbgcfha
