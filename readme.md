@@ -7,7 +7,7 @@
 
 Если необходимо для контейнеров удалить пароль (чтобы не повялось каждый раз окно КриптоПро CSP) то для каждого контейнера добавить аргументы, например:
 
---build-arg CONTAINER_1=a2878a6c-c9cb-4876-baf4-c04b8a1d91b8 --build-arg PASSWORD_1=1234567890 --build-arg CONTAINER_2=80ce8100-08d3-45d7-922b-feab17573c0f --build-arg PASSWORD_2=1234567890 
+--build-arg CONTAINER_1=492cafd5c-38c6-8604-1f4c-9af3b8bae40 --build-arg PASSWORD_1=1234567890 --build-arg CONTAINER_2=94582eb8a-724f-bfd1-75c0-4166db041ec --build-arg PASSWORD_2=1234567890 
 
 где 
 
@@ -30,7 +30,7 @@ USER_NAME=selenium - Имя пользователя от которого бу�
 
 Build:
                 
-    docker build -t vnc_chrome_csp --build-arg CONTAINER_1=a2878a6c-c9cb-4876-baf4-c04b8a1d91b8 --build-arg CONTAINER_2=80ce8100-08d3-45d7-922b-feab17573c0f .
+    docker build -t vnc_chrome_csp --build-arg CONTAINER_1=492cafd5c-38c6-8604-1f4c-9af3b8bae40 --build-arg CONTAINER_2=94582eb8a-724f-bfd1-75c0-4166db041ec .
 
 В составе Selenoid:
 1. Добавить в ~/.aerokube/selenoid/browsers.json новый контейнер для Chrome или заменить selenoid/vnc_chrome:83.0 на vnc_chrome_csp:latest
@@ -70,18 +70,17 @@ Standalone:
 Для создения контейнера на основе другого браузера необходимо изменить первую строку в Dockerfile **"FROM selenoid/vnc:chrome_83.0"** выбрав из
 имеющихся в открытом доступе (https://github.com/aerokube/selenoid/blob/master/docs/browser-image-information.adoc)
 
-см также https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/275
-
-см также https://forum.ubuntu.ru/index.php?topic=300549.0
 
 КриптоПро csp dist https://www.cryptopro.ru/products/csp/downloads
 
 IFCPlugin dist https://ds-plugin.gosuslugi.ru/plugin/upload/Index.spr
 
-см также https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/275
+Инструкция от КриптоПро https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/275
 
-см также https://forum.ubuntu.ru/index.php?topic=300549.0
+Установка CryptoPro + CadesPlugin + IFCPlugin(Госуслуги, ЕСИА) на Ubuntu https://forum.ubuntu.ru/index.php?topic=300549.0
 
-см также http://crxextractor.com/
+Извлечь crx для расширения http://crxextractor.com/
 
-см также https://chrome.google.com/webstore/detail/ifcplugin-extension/pbefkdcndngodfeigfdgiodgnmbgcfha
+Расширение для Chrome https://chrome.google.com/webstore/detail/ifcplugin-extension/pbefkdcndngodfeigfdgiodgnmbgcfha
+
+Сформировать тестовый контейнер можно тут https://www.cryptopro.ru/certsrv/certrqma.asp
