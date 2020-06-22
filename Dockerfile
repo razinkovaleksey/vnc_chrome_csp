@@ -43,7 +43,7 @@ RUN chown $USER_NAME /var/opt/cprocsp/keys/$USER_NAME/ -R
 
 RUN apt update && apt-get install -y pcscd
 RUN dpkg -i /tmp/dist/IFCPlugin-x86_64.deb
-RUN rm /etc/ifc.cfg && cp /tmp/dist/ifc.cfg /etc/ifc.cfg
+RUN rm /etc/ifc.cfg && cp /tmp/dist/ifcx64.cfg /etc/ifc.cfg
 
 USER $USER_NAME
 RUN /opt/cprocsp/bin/amd64/csptestf -absorb -certs -autoprov
