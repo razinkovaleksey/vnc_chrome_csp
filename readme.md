@@ -40,6 +40,24 @@ Build:
     ```
     docker kill -s HUP selenoid
     ```
+    
+3. Добавить crx в капабилити
+
+    ```python
+    import os
+    from selenium import webdriver
+
+    chrome_options = selenium.webdriver.chrome.options.Options()
+    chrome_options.add_extension(os.path.join(os.getcwd(), 'plugin.crx'))
+    desired_capabilities = chrome_options.to_capabilities()
+
+    desired_capabilities['browserName'] = "chrome"
+    desired_capabilities['version'] = "83.0"
+    desired_capabilities['enableVNC'] = True
+    desired_capabilities['enableVideo'] = False
+
+    driver = webdriver.Remote(command_executor="http://selenoid:4444/wd/hub", desired_capabilities=desired_capabilities)
+    ```
 
 Standalone:
    
