@@ -1,4 +1,4 @@
-FROM selenoid/vnc:chrome_83.0
+FROM selenoid/vnc:chrome_112.0
 USER root
 
 ARG CSP_LICENSE_KEY=false
@@ -20,6 +20,7 @@ ARG PASSWORD_6=1234567890
 ADD dist/ /tmp/dist/
 ADD cert/ /tmp/cert/
 
+RUN apt update && apt-get install -y libgtk2.0-dev
 RUN tar -zxf /tmp/dist/linux-amd64_deb.tgz -C /tmp/dist/
 
 # Установка КриптоПро CSP 5
@@ -43,7 +44,8 @@ RUN chown $USER_NAME /var/opt/cprocsp/keys/$USER_NAME/ -R
 
 RUN apt update && apt-get install -y pcscd
 RUN dpkg -i /tmp/dist/IFCPlugin-x86_64.deb
-RUN rm /etc/ifc.cfg && cp /tmp/dist/ifcx64.cfg /etc/ifc.cfg
+RUN rm /etc/ifc.cfg && cp /tmp/dist/ifc.cfg /etc/ifc.cfg
+RUN cp /tmp/dist/pbefkdcndngodfeigfdgiodgnmbgcfha.json /opt/google/chrome/extensions/pbefkdcndngodfeigfdgiodgnmbgcfha.json
 
 USER $USER_NAME
 RUN /opt/cprocsp/bin/amd64/csptestf -absorb -certs -autoprov
